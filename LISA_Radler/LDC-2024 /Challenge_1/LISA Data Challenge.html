@@ -1,0 +1,259 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="C. Cavet" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/data/img/gravwaves.ico" />
+
+    <title>LISA Data Challenge</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/data/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/data/css/starter-template.css" rel="stylesheet">
+
+    <!-- Plotly library -->
+    <script src="/static/data/js/plotly-latest.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">LDC</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Challenges <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/challenge1a">Challenge 1a</a></li>
+                  <li><a href="/challenge1b">Challenge 1b</a></li>
+                  <li><a href="/challenge2a">Challenge 2a</a></li>
+                  <li><a href="/challenge2b">Challenge 2b</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="/code">LDC code</a></li>
+            <li><a href="/file">Datasets</a></li>
+            <li><a href="/form">Result form</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Challenge results <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/result1">Challenge 1</a></li>
+                  <li><a href="/result2">Challenge 2</a></li>
+                </ul>
+            </li>
+            
+            <!-- <li><a href="/publi">Publication Policies</a></li> -->
+            <li><a href="/meeting">Meetings</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/admin" target="_blank">Admin</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="/accounts/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-center">
+      <div class="starter-template">
+        
+    <div class="container-fluid">
+        <div class="row">
+            <h1 style="margin-bottom: 18pt">LISA Data Challenge 1: <i>Radler</i></h1>
+
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <p style="text-align: left">We are glad to announce the release of datasets for the first “new” LISA Data Challenge, codenamed <strong>Radler</strong>. The purpose of this first challenge is to tackle the main LISA sources separately, under an idealized instrument-noise model. Our aim is to introduce new researchers to LISA data analysis, to rehabilitate existing analysis codes developed during the <a href="https://astrogravs.gsfc.nasa.gov/docs/mldc">original Mock LISA Data Challenges</a> (2005–2011), and to establish LDC process and standards.</p>
+
+                    <p style="text-align: left">Radler includes <strong>six subchallenges</strong>, described below. This challenge will not be blind (source parameters are available), but you are welcome to try the analysis without referring to the answer. Furthermore, versions of the datasets without instrument noise are included in the release. LDC working-group members will be preparing their own analysis using their algorithms of choice, and invite you to join them (to do so, <a href="mailto:lisa-ldc-helpdesk-l@in2p3.fr">e-mail us</a> so we can pair you appropriately). Of course, you may organize to work on your own, or with your collaborators.</p>
+
+                    <p style="text-align: left">For usage tracking purposes, we request that you set up a login for this website before downloading the datasets.
+                    Please <strong>submit your results by December 31, 2019</strong>, using the submission interface and format that will appear shortly on this page. Please plan to include a description of your methods (or a link to a methods paper) with your submission. We would also greatly appreciate it if you were to share your code (e.g., on GitHub, or on our GitLab).</p>
+
+                    <p style="text-align: left">While we did our best to check the datasets for correctness, small problems or inconsistencies may have escaped us. The best way to validate the data is to analyze it, so <a href="mailto:lisa-ldc-helpdesk-l@in2p3.fr">let us know</a> of any problems!</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    
+                    <p style="text-align: right"><a class="btn btn-primary btn-lg" href="/file" role="button">Download datasets &raquo;</a></p>
+                    
+
+                    <p style="text-align: right"><a class="btn btn-info btn-lg" href="/static/data/pdf/LDC-manual-002.pdf" role="button">LDC-1 documentation &raquo;</a></p>
+
+                    
+                    <p style="text-align: right"><a class="btn btn-success btn-lg" href="/code" role="button">LDC-1 code &raquo;</a></p>
+                    
+
+                    <p style="text-align: right"><a class="btn btn-warning btn-lg" href="mailto:lisa-ldc-helpdesk-l@in2p3.fr" role="button">Ask for help &raquo;</a></p>
+                </div>
+            </div>
+        <!--
+        <p>
+            The "Radler" datasets are meant to ressurect the old tools used in the analysis of the datasets within the MLDC activity (2005-2011). There are some novelties introduced in this challenge: inspiral-merger-ringdown (IMR) waveform for massive black hole binaries (MBBH), data set with unequal noise level in the links, data set for stellar mass binary black holes (SBBH), new catalogue for Galactic white dwarf binaries. We use the over-simplified LISA orbit and Gaussian noise. The dataset generation software is hosted on GitLab <a href="https://gitlab.in2p3.fr/stas/MLDC"> <img src="/static/data/img/GitLab_Logo.svg" width="20"/> </a> (requires sign up, please use your academic e-mail address). As mentioned these data sets are used primarily to start building the data analysis pipeline, to test the old data analysis tools/methods and start developing new.	  <br>
+            <br>
+            The simulation of the Gaussian (colored) LISA noise is always done using LISACode. 
+            We use 1.5 generation TDI and distribute X, Y, Z data streams assuming the (eccentric) analytic orbit and perfect cancellation of the laser frequency noise.  
+            We might produce the noiseless data sets uppon request. The data (together with metadata and source parameters) is stored in <b>hdf5</b> format. We will provide a simple parser script which extracts the data and stores it in <b>ascii</b> format and displays the parameters in a table format.
+        </p>
+                <div class="image">
+                <img src="/static/data/img/LDCdataproduction.jpg" width="800"/>
+                <p><u>Workflow.</u></p>
+        </div>
+        -->
+        </div>
+
+        <!-- <div class="row">
+            <p>
+                
+                <a class="btn btn-primary btn-md" href="/file" role="button">Download datasets &raquo;</a>
+                
+
+                <a class="btn btn-info btn-md" href="/static/data/pdf/LDC-manual-001.pdf" role="button">LDC-1 documentation &raquo;</a>
+
+                <a class="btn btn-success btn-md" href="/code" role="button">LDC-1 code &raquo;</a>
+
+                <a class="btn btn-warning btn-md" href="mailto:lisa-ldc-helpdesk-l@in2p3.fr" role="button">Ask for help &raquo;</a>
+            </p>
+        </div> -->
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 18pt">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-1. A single GW signal from a merging massive-black-hole binary.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">LIGO and Virgo have done it, so let's get LISA on the right path! MBHBs are represented with a frequency-domain inspiral–merger–ringdown phenomenological model (IMRPhenomD). The black holes are spinning, with spin vectors parallel to the orbital angular momentum. The release includes datasets for two methods (frequency- and time-domain) of applying the LISA response to the GWs.</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/bbh_time2.png" class="img-responsive"/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-2. A single GW signal from an extreme-mass-ratio inspiral.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">EMRIs are modeled with the “classic” <i>Analytic Kludge</i> waveforms, which will be updated in future challenges, so make your code flexible! The signal is produced in the time domain and the response is applied using LISACode. The signal is of moderate strength, but the source parameters are drawn from relatively wide priors. This should make for a good challenge!</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/emri_time.png" class="img-responsive"/>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: 18pt">
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-3. Superimposed GW signals from several verification Galactic white-dwarf binaries.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">We assume circular orbits and purely gravitational interactions. The phase of the signal includes frequency and first derivative. This one should be easy!</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/verification.png" class="img-responsive"/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-4. A GW signal from a population of Galactic white-dwarf binaries.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">Here's the classic cocktail-party problem: 26 million signals, produced with a “fast response” code. Parameters of all binaries are available in a large HDF5 file.</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/GB_psd.png" class="img-responsive"/>
+            </div>
+        </div> 
+
+    </div>
+    <div class="row" style="margin-top: 18pt">
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-5. A GW signal from a population of stellar-origin (stellar-mass) black-hole binaries.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">LIGO and Virgo's gift to LISA. The population follows Salpeter's mass function, with an overall rate based on recent LIGO–VIRGO estimates. Waveform and LISA response are computed in the frequency domain.</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/plot_SOBH_TDIXdataset.png" class="img-responsive"/>
+            </div>
+        </div> 
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h4 style="text-align: left; margin-top: 6pt">LDC1-6. An isotropic stochastic GW signal of primordial origin.</h4>
+            </div>
+
+            <div class="col-md-6">
+                <p style="text-align: left">Statistics are Gaussian, but the spectral shape is shrouded in mystery, with parameters chosen for us by the LISA Consortium Cosmology Working Group. The signal is generated using LISACode as a choir of elementary sources uniformly distributed across the sky. To make things easier for you, instrumental noise is Gaussian, uncorrelated, and of the same level in each LISA link.</p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/data/img/stochastic.png" class="img-responsive"/>
+            </div>
+        </div> 
+      </div>
+    </div>
+
+
+      </div>
+    </div>
+
+    <footer class="bs-footer">
+      <div class="container text-center">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="text-muted">
+            Last update: Oct. 14, 2024, 10:14 a.m. &copy; Cécile Cavet 
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/data/js/jquery.min.js"><\/script>')</script>
+    <script src="/static/data/js/bootstrap.min.js"></script>
+  </body>
+</html>
